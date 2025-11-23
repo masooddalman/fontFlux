@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     const applyBtn = document.getElementById('apply-btn');
     const resetBtn = document.getElementById('reset-btn');
     const statusMsg = document.getElementById('status-msg');
+    const versionDisplay = document.getElementById('version-display');
+    const githubLink = document.getElementById('github-link');
+
+    // Display version
+    const manifest = chrome.runtime.getManifest();
+    versionDisplay.textContent = `${manifest.name} ${manifest.version}`;
+
+    // Handle GitHub link
+    githubLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        chrome.tabs.create({ url: 'https://github.com/masooddalman/fontFlux' });
+    });
 
     try {
         const response = await fetch('fonts.json');
