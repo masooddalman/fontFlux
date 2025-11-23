@@ -28,6 +28,8 @@ See how FontFlux transforms your browsing experience:
 | <img src="screens/before2.jpg" width="400" alt="Before 2"/> | <img src="screens/after2.jpg" width="400" alt="After 2"/> |
 | <img src="screens/before3.jpg" width="400" alt="Before 3"/> | <img src="screens/after3.jpg" width="400" alt="After 3"/> |
 
+the selected font in the screen shot is **Vazirmatn**
+
 ## How It Works
 
 FontFlux operates by injecting a content script into the web pages you visit. When you select your preferred fonts via the extension popup:
