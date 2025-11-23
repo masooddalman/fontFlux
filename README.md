@@ -3,6 +3,8 @@
   <h1>FontFlux</h1>
 </div>
 
+[فارسی](README.fa.md)
+
 FontFlux is a powerful Chrome Extension that empowers you to take control of your reading experience by customizing fonts on any website using the vast library of Google Fonts. Whether you prefer a specific serif for reading articles or a clean sans-serif for browsing, FontFlux makes it easy to personalize the web.
 
 <div align="center">
