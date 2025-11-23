@@ -47,24 +47,47 @@ document.addEventListener('DOMContentLoaded', async () => {
     populateSelect(sansSelect, FONTS.sans);
     populateSelect(monoSelect, FONTS.mono);
 
-    chrome.storage.sync.get(['fontFluxSettings'], (result) => {
-        if (result.fontFluxSettings) {
-            serifSelect.value = result.fontFluxSettings.serif || 'Default';
-            sansSelect.value = result.fontFluxSettings.sans || 'Default';
-            monoSelect.value = result.fontFluxSettings.mono || 'Default';
+    // Get current tab domain
+    async function getCurrentDomain() {
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        if (!tab || !tab.url) return null;
+        try {
+            const url = new URL(tab.url);
+            return url.hostname;
+        } catch {
+            return null;
         }
-    });
+    }
 
-    applyBtn.addEventListener('click', () => {
+    // Load saved settings for current domain
+    const domain = await getCurrentDomain();
+    if (domain) {
+        chrome.storage.sync.get([domain], (result) => {
+            const settings = result[domain];
+            if (settings) {
+                serifSelect.value = settings.serif || 'Default';
+                sansSelect.value = settings.sans || 'Default';
+                monoSelect.value = settings.mono || 'Default';
+            }
+        });
+    }
+
+    applyBtn.addEventListener('click', async () => {
+        const domain = await getCurrentDomain();
+        if (!domain) return;
+
         const settings = {
             serif: serifSelect.value,
             sans: sansSelect.value,
             mono: monoSelect.value
         };
-        applySettings(settings);
+        applySettings(domain, settings);
     });
 
-    resetBtn.addEventListener('click', () => {
+    resetBtn.addEventListener('click', async () => {
+        const domain = await getCurrentDomain();
+        if (!domain) return;
+
         const settings = {
             serif: 'Default',
             sans: 'Default',
@@ -75,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         sansSelect.value = 'Default';
         monoSelect.value = 'Default';
 
-        applySettings(settings);
+        applySettings(domain, settings);
     });
 
     function populateSelect(selectElement, fontList) {
@@ -88,8 +111,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    function applySettings(settings) {
-        chrome.storage.sync.set({ fontFluxSettings: settings });
+    function applySettings(domain, settings) {
+        // Save to storage with domain as key
+        chrome.storage.sync.set({ [domain]: settings });
 
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             if (tabs[0]) {

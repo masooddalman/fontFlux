@@ -6,15 +6,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'applyFonts') {
         updateFonts(request.fonts);
         // Save to storage
-        chrome.storage.sync.set({ fontFluxSettings: request.fonts });
+        chrome.storage.sync.set({ [location.hostname]: request.fonts });
         sendResponse({ status: 'success' });
     }
 });
 
 // Load saved settings on startup
-chrome.storage.sync.get(['fontFluxSettings'], (result) => {
-    if (result.fontFluxSettings) {
-        updateFonts(result.fontFluxSettings);
+chrome.storage.sync.get([location.hostname], (result) => {
+    const settings = result[location.hostname];
+    if (settings) {
+        updateFonts(settings);
     }
 });
 
