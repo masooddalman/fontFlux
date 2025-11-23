@@ -60,7 +60,7 @@ function updateFonts(fonts) {
     let cssRules = [];
 
     if (sans && sans !== 'Default') {
-        cssRules.push(`body, p, span, div, a, li, td, th, input, button, textarea, select { font-family: '${sans}', sans-serif !important; }`);
+        cssRules.push(`body, p, span, div, a, li, td, th, input, button, textarea, select, yt-formatted-string { font-family: '${sans}', sans-serif !important; }`);
     }
 
     if (serif && serif !== 'Default') {
