@@ -1,10 +1,26 @@
 # Getting Started With Google Chrome Extensions (Hello World)
 
-This example demonstrates how to create a simple "Hello World" Chrome Extension.
-For more details, visit the [official tutorial](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world).
+# FontFlux
 
-## Running This Extension
+FontFlux is a Chrome Extension that allows you to customize the fonts on any website using Google Fonts.
 
-1. Clone this repository.
-2. Load this directory in Chrome as an [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
-3. Click the extension icon in the Chrome toolbar, then select the "Hello Extensions" extension. A popup will appear displaying the text "Hello Extensions".
+## Features
+
+- **Select Fonts**: Choose from a curated list of popular Google Fonts for Serif, Sans Serif, and Monospace styles.
+- **Live Preview**: Apply fonts instantly to the current page.
+- **Persistent Settings**: Your font choices are saved and automatically applied to all websites you visit.
+- **Modern UI**: A beautiful, easy-to-use interface.
+
+## Installation
+
+1. Open Chrome and navigate to `chrome://extensions/`.
+2. Enable "Developer mode" in the top right corner.
+3. Click "Load unpacked".
+4. Select this directory.
+
+## Usage
+
+1. Click the FontFlux icon in the toolbar.
+2. Select your preferred fonts for each category.
+3. Click "Apply Fonts".
+4. The fonts will be applied to the current page and saved for future visits.

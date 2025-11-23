@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FontFlux</title>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --glass-bg: rgba(255, 255, 255, 0.95);
+      --text: #1f2937;
+      --text-light: #6b7280;
+    }
+
+    body {
+      width: 320px;
+      height: 450px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg-gradient);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 90%;
+      height: 90%;
+      background: var(--glass-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    p.subtitle {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background-color: #f9fafb;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 16px;
+    }
+
+    select:hover {
+      border-color: var(--primary);
+    }
+
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    .actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #apply-btn {
+      background-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
+    }
+
+    #apply-btn:hover {
+      background-color: var(--primary-hover);
+      box-shadow: 0 6px 8px rgba(99, 102, 241, 0.4);
+    }
+
+    #reset-btn {
+      background-color: #f3f4f6;
+      color: var(--text);
+    }
+
+    #reset-btn:hover {
+      background-color: #e5e7eb;
+    }
+
+    .status {
+      text-align: center;
+      font-size: 12px;
+      height: 14px;
+      color: var(--primary);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .status.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>FontFlux</h1>
+      <p class="subtitle">Transform the web with Google Fonts</p>
+    </header>
+
+    <div class="control-group">
+      <label for="serif-select">Serif (Headings)</label>
+      <select id="serif-select">
+        <option value="Default">Default</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="sans-select">Sans Serif (Body)</label>
+      <select id="sans-select">
+        <option value="Default">Default</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="mono-select">Monospace (Code)</label>
+      <select id="mono-select">
+        <option value="Default">Default</option>
+      </select>
+    </div>
+
+    <div class="status" id="status-msg">Applied successfully!</div>
+
+    <div class="actions">
+      <button id="reset-btn">Reset</button>
+      <button id="apply-btn">Apply Fonts</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
