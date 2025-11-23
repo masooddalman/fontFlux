@@ -1,6 +1,13 @@
-# FontFlux
+<div align="center">
+  <img src="screens/fontFluxIcon.png" alt="FontFlux Logo" width="128"/>
+  <h1>FontFlux</h1>
+</div>
 
 FontFlux is a powerful Chrome Extension that empowers you to take control of your reading experience by customizing fonts on any website using the vast library of Google Fonts. Whether you prefer a specific serif for reading articles or a clean sans-serif for browsing, FontFlux makes it easy to personalize the web.
+
+<div align="center">
+  <img src="screens/fontFlux.jpg" alt="FontFlux Interface" width="300"/>
+</div>
 
 > **Note:** We are working on publishing FontFlux to the Chrome Web Store soon!
 
@@ -10,6 +17,16 @@ FontFlux is a powerful Chrome Extension that empowers you to take control of you
 * **YouTube Live Chat Support**: Unlike other similar extensions, FontFlux can also change the font of the **YouTube live chat box and other chat boxes**.
 * **Customizable**: You can customize the font for each category (Serif, Sans Serif, and Monospace) to your liking.
 * **Lightweight**: FontFlux is lightweight and does not affect the performance of your browser.
+
+## Examples
+
+See how FontFlux transforms your browsing experience:
+
+| Before | After |
+| :---: | :---: |
+| <img src="screens/before1.jpg" width="400" alt="Before 1"/> | <img src="screens/after1.jpg" width="400" alt="After 1"/> |
+| <img src="screens/before2.jpg" width="400" alt="Before 2"/> | <img src="screens/after2.jpg" width="400" alt="After 2"/> |
+| <img src="screens/before3.jpg" width="400" alt="Before 3"/> | <img src="screens/after3.jpg" width="400" alt="After 3"/> |
 
 ## How It Works
 
