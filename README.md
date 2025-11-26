@@ -11,8 +11,6 @@ FontFlux is a powerful Chrome Extension that empowers you to take control of you
   <img src="screens/fontFlux.jpg" alt="FontFlux Interface" width="300"/>
 </div>
 
-> **Note:** We are working on publishing FontFlux to the Chrome Web Store soon!
-
 ## Why Choose FontFlux?
 
 * **Superior Font Selection**: FontFlux boasts a much larger collection of fonts than other similar extensions.
@@ -45,7 +43,11 @@ FontFlux operates by injecting a content script into the web pages you visit. Wh
 
 ### Installation
 
-Since this project is currently in development/open source:
+**Install from Chrome Web Store:**
+
+[<img src="https://developer.chrome.com/static/docs/webstore/branding/image/HRs9MPufa1J1h5glNhut.png" alt="Available in the Chrome Web Store" />](https://chromewebstore.google.com/detail/fontflux/oopbdjekmjdbjmmfbdpacbgcfpobemde?authuser=0&hl=en)
+
+Or, for development purposes:
 
 1. Clone or download this repository to your local machine.
 2. Open Google Chrome and navigate to `chrome://extensions/`.
